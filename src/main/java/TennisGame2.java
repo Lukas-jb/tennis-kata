@@ -14,7 +14,7 @@ public class TennisGame2 implements TennisGame {
         String score;
         if (p1Point == p2Point) score = equalScore();
         else if (p1Point >= 4 || p2Point >= 4) score = scoreGreaterThan4();
-        else score = differentScore(p1Point)+" - "+ differentScore(p2Point);
+        else score = differentScore(p1Point)+"-"+ differentScore(p2Point);
 
         return score;
     }
@@ -34,7 +34,7 @@ public class TennisGame2 implements TennisGame {
     }
     private String equalScore(){
         switch (p1Point){
-            case 0: return "Love";
+            case 0: return "Love-All";
             case 1:return "Fifteen-All";
             case 2:return "Thirty-All";
             default:return "Deuce";

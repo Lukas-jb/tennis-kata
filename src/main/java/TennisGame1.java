@@ -12,7 +12,7 @@ public class TennisGame1 implements TennisGame {
     }
 
     public void wonPoint(String playerName) {
-        if (playerName.equals(this.scorePlayer1)) scorePlayer1 += 1;
+        if (playerName.equals(this.PLAYER1NAME)) scorePlayer1 += 1;
         else scorePlayer2 += 1;
     }
 
@@ -21,8 +21,9 @@ public class TennisGame1 implements TennisGame {
 
         if (scorePlayer1 == scorePlayer2) score = equalScoreString();
         else if (scorePlayer1 >= 4 || scorePlayer2 >= 4) score = scoreGreaterThan4();
-        else score = differentScore(scorePlayer1) + "-" + differentScore(scorePlayer2);
-        differentScore(scorePlayer2);
+        else {
+            score = differentScore(scorePlayer1) + "-" + differentScore(scorePlayer2);
+        }
         return score;
     }
 
@@ -35,7 +36,6 @@ public class TennisGame1 implements TennisGame {
                 return "Fifteen";
             case 2:
                 return "Thirty";
-            case 3:
             default:
                 return "Forty";
         }
@@ -44,25 +44,22 @@ public class TennisGame1 implements TennisGame {
     private String scoreGreaterThan4() {
         int minusResult = scorePlayer1 - scorePlayer2;
         switch (minusResult) {
-            case 1:
-            case -1:
-                return advantageScore(minusResult);
+            case 1: case -1: return advantageScore(minusResult);
             default:
                 return winScore(minusResult);
         }
     }
 
     private String advantageScore(int minusResult) {
-        return minusResult == 1 ? "Advantage Player 1" : "Advantage Player 2";
+        return minusResult == 1 ? "Advantage player1" : "Advantage player2";
     }
 
     private String winScore(int minusResult) {
-        return minusResult >= 2 ? "Win for Player 1" : "Win for Player 2";
+        return minusResult >= 2 ? "Win for player1" : "Win for player2";
     }
 
 
     private String equalScoreString() {
-        String score;
         switch (scorePlayer1) {
             case 0:
                 return "Love-All";
