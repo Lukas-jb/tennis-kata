@@ -25,7 +25,7 @@ public class TennisGame1 implements TennisGame {
         differentScore(scorePlayer2);
         return score;
     }
-   
+
 
     private String differentScore(int scorePlayer) {
         switch (scorePlayer) {
