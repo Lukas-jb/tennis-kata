@@ -27,31 +27,6 @@ public class TennisGame2 implements TennisGame {
             }
         }
 
-// no se usa, evaluar antes de eliminar
-    public void SetP1Score(int number) {
-
-        for (int i = 0; i < number; i++) {
-            P1Score();
-        }
-
-    }
-    // no se usa, evaluar antes de eliminar
-    public void SetP2Score(int number) {
-
-        for (int i = 0; i < number; i++) {
-            P2Score();
-        }
-
-    }
-
-    public void P1Score() { // evaluar si borrar
-        p1Point++;
-    }
-
-    public void P2Score() { // evaluar si borrar
-        p2Point++;
-    }
-
     public void wonPoint(String player) {
         if (player.equals(this.PLAYER1NAME))p1Point++;
         else
